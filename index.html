@@ -41,7 +41,7 @@
     <script type='text/babel'>
       const Departments = ({ users, departments, match})=> {
         const department = departments.find( department => department.id === match.params.id) || {};
-        const filtered = users.filter( user => (user.department_id === match.params.id) || ( !match.params.id && !user.department_id));
+        const filtered = users.filter( user => (user.departments_id === match.params.id) || ( !match.params.id && !user.departments_id));
         return (
           <div>
             <h2>{ department.name }</h2>
@@ -59,10 +59,10 @@
       const Nav = ({ users, departments, match})=> {
 
         const mapped = departments.map( department => {
-          return {...department, users: users.filter( user => user.department_id === department.id)};
+          return {...department, users: users.filter( user => user.departments_id === department.id)};
         });
 
-        const usersWithNoDepartment = users.filter( user => !user.department_id);
+        const usersWithNoDepartment = users.filter( user => !user.departments_id);
 
 
         return (

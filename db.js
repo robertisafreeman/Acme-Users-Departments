@@ -13,6 +13,7 @@ const houseId = uuid.v4();
 const artId = uuid.v4();
 const natId = uuid.v4();
 const robId = uuid.v4();
+const meowId = uuid.v4();
 
 
 const SQL = `
@@ -34,6 +35,7 @@ const SQL = `
     INSERT INTO users(id, name, departments_id) VALUES('${artId}', 'Arthur Sandro', '${frontId}');
     INSERT INTO users(id, name, departments_id) VALUES('${natId}', 'Nathan Roy', '${maintId}');
     INSERT INTO users(id, name, departments_id) VALUES('${robId}', 'Robert Freeman', '${houseId}');
+    INSERT INTO users(id, name) VALUES('${meowId}', 'Meow Mow');
 `;
 
 const syncAndSeed = async()=> {
